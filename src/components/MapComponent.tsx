@@ -45,7 +45,7 @@ const MapComponent = (props: any) => {
 					<GoogleMap
 						mapContainerStyle={{ width: '100%', height: '100%' }}
 						center={getCentralPosition(suppliers)}
-						zoom={15}
+						zoom={13}
 					/* onLoad={onLoad}
 					onUnmount={onUnmount} */
 					>

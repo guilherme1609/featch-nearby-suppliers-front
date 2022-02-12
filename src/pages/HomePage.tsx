@@ -8,14 +8,19 @@ import { useEffect, useState } from 'react'
 import CustomerSupplier from '../core/CustomerSupplier'
 import AuthService from '../services/AuthService'
 import { useNavigate } from 'react-router-dom'
+import AuthRepository from '../core/AuthRepository'
+import Auth from '../core/Auth'
 
 export default function HomePage() {
 
 	CheckAuthGuard('/home')
+	const serviceAuth: AuthRepository = new AuthService()
+
 	let navigate = useNavigate()
 	const { customerSuppliers } = useNearbySuppliers()
 	const [suppliers, setSuppliers] = useState([])
 	const [customerAddressData, selectCustomerAddress] = useState({})
+	const [userData, setUserData] = useState({})
 
 	const authService = new AuthService()
 
@@ -48,6 +53,9 @@ export default function HomePage() {
 
 	useEffect(() => {
 		setSuppliers(getAllSuppliers(customerSuppliers))
+		serviceAuth.getMe()
+					.then((data) => setUserData(data))
+					.catch(e => console.log(e))
 	}, [customerSuppliers])
 
 	return (
@@ -60,6 +68,7 @@ export default function HomePage() {
 					onSelectCustomerAddress={
 						(customerAddress: CustomerSupplier) => selectCustomerAddress(customerAddress)
 					}
+					userData={userData}
 					onLogout={() => logOut()}
 				/>
 				{/* </div> */}

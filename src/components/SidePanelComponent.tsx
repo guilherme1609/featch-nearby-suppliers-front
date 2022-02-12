@@ -9,6 +9,7 @@ export default function SidePanelComponent(props: any) {
 
 	const [searchTerm, setSearchTerm] = useState('')
 	const customerAddresses = props.customerAddresses
+	const {name, email} = props.userData
 
 	const filterCustomerAddress = (searchTerm: string, customerAddress: CustomerSupplier) => {
 		if (searchTerm == "") {
@@ -58,8 +59,8 @@ export default function SidePanelComponent(props: any) {
 					<img src="https://randomuser.me/api/portraits/thumb/men/36.jpg"/>
 				</div>
 				<div className="user-info">
-					<p id='u-name'>José Geraldo Costa</p>
-					<p id='u-email'>jgt.josegeraldo@teste.com.br</p>
+					<p id='u-name'>{name}</p>
+					<p id='u-email'>{email}</p>
 					<p id='u-editar'><a href="#">Editar perfil</a></p>
 				</div>
 				<div className="user-logout">
