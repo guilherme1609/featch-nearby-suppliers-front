@@ -1,0 +1,11 @@
+input {
+	padding: 10px;
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.label-form{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,148 @@
+.side-panel{
+    display: flex;
+    align-items: center;
+	height: 100vh;
+    flex-direction: column;
+}
+.search-section {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.side-panel .search-section input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+	border: 1px solid #5C6064;
+}
+
+.search-section input:hover {
+    border: 1px solid black;
+}
+
+p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.card-container {
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 10px 10px 0px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+    background: #fff;
+}
+
+.card-container{
+    flex-direction: row;
+}
+
+.card-container .card-title{
+    font-size: 16px;
+    font-weight: 500;
+    color: #5C6064;
+}
+
+.card-container .card-info{
+    font-size: 14px;
+    color: #70757A;
+}
+
+.card-actions {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.bt-edit{
+    border-radius: 5px;
+    border: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #2D9CDB;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.bt-edit:hover{
+    background-color: #2D9CDBdb;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.bt-choose-address{
+    border-radius: 5px;
+    border: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #6FCF97;
+    color: #fff;
+	cursor: pointer;
+}
+
+.bt-choose-address:hover{
+    border-radius: 5px;
+    border: 0;
+    padding: 5px 10px 5px 10px;
+    background-color: #6FCF97db;
+    color: #fff;
+	cursor: pointer;
+}
+.addresses-section{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+}
+.user-section {
+	display: flex;
+	height: 100px;
+	width: 100%;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #fff;
+}
+
+.user-foto img{
+	border-radius: 25px;
+}
+
+.user-info {
+	display: flex;
+	flex-direction: column;
+	margin: 2px 5px 2px 5px;
+}
+
+#u-name {
+	font-size: 0.9em;
+	font-weight: 500;
+	margin: 2px 5px 2px 5px;
+}
+
+#u-email {
+	font-size: 0.8em;
+	font-weight: 400;
+	margin: 2px 5px 2px 5px;
+}
+
+#u-editar {
+	font-size: 0.8em;
+	margin: 2px 5px 2px 5px;
+}
+
+.user-logout {
+	cursor: pointer;
+}
