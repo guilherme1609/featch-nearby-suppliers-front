@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
 import '../styles/MapComponent.css'
-import Supplier from '../core/CustomerSupplier'
-
-export interface MapComponentProps {
-}
+// import Supplier from '../core/CustomerSupplierAddress'
+// import CustomerAddress from '../core/CustomerAddress'
+import CustomerSupplierAddress from '../core/CustomerSupplierAddress'
+import Supplier from '../core/Supplier'
 
 const MapComponent = (props: any) => {
 
+	// All suppliers of all customer addresses
 	const initialState = [...props.suppliers]
-	const customerAddress = props.customerAddressData
+	const customerAddressSelected = props.customerAddressData
 	let suppliers: any = []
 
-	if (customerAddress && customerAddress.suppliers && customerAddress.suppliers.length > 0) {
-		suppliers = customerAddress.suppliers
+	if (customerAddressSelected && customerAddressSelected.suppliers && customerAddressSelected.suppliers.length > 0) {
+		suppliers = [customerAddressSelected.customer,...customerAddressSelected.suppliers]
+		// suppliers = [...customerAddressSelected.suppliers]
 	} else {
 		suppliers = initialState
 	}
@@ -68,14 +70,6 @@ const MapComponent = (props: any) => {
 									)
 								}) : []
 						}
-
-						{/* <Marker position={position} options={{
-							label: {
-								text: "Posição teste",
-								color: "white",
-								className: "map-marker"
-							},
-						}} /> */}
 						{ /* Child components, such as markers, info windows, etc. */}
 						<></>
 					</GoogleMap>

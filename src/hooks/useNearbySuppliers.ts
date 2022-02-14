@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Supplier from "../core/CustomerSupplier";
+import Supplier from "../core/CustomerSupplierAddress";
 import CustomerSuppliersRepository from "../core/CustomerSuppliersRepository";
 import SupplierService from "../services/SupplierService";
 

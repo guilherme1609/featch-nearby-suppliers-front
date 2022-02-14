@@ -1,5 +1,5 @@
 import axios from "axios";
-import Supplier from "../core/CustomerSupplier";
+import Supplier from "../core/CustomerSupplierAddress";
 import SuppliersRepository from "../core/CustomerSuppliersRepository";
 
 export default class SupplierService implements SuppliersRepository {

@@ -1,5 +1,5 @@
-import CustomerSupplier from "./CustomerSupplier";
+import CustomerSupplierAddress from "./CustomerSupplierAddress";
 
 export default interface CustomerSuppliersRepository {
-	fetchAllNearbySuppliers(): Promise<CustomerSupplier[]>
+	fetchAllNearbySuppliers(): Promise<CustomerSupplierAddress[]>
 }

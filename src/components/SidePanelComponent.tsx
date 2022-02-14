@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import '../styles/SidePanelComponent.css'
 import DividerComponent from './DividerComponent'
-import CustomerSupplier from '../core/CustomerSupplier'
+import CustomerSupplierAddress from '../core/CustomerSupplierAddress'
 import {FiLogOut} from 'react-icons/fi'
 
 export default function SidePanelComponent(props: any) {
@@ -11,11 +11,11 @@ export default function SidePanelComponent(props: any) {
 	const customerAddresses = props.customerAddresses
 	const {name, email} = props.userData
 
-	const filterCustomerAddress = (searchTerm: string, customerAddress: CustomerSupplier) => {
+	const filterCustomerAddress = (searchTerm: string, customerSupplierAddress: CustomerSupplierAddress) => {
 		if (searchTerm == "") {
-			return customerAddress
-		} else if (customerAddress.addressName.toLowerCase().includes(searchTerm.toLowerCase())) {
-			return customerAddress
+			return customerSupplierAddress
+		} else if (customerSupplierAddress.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+			return customerSupplierAddress
 		}
 	}
 
@@ -28,13 +28,13 @@ export default function SidePanelComponent(props: any) {
 			<div className='addresses-section'>
 				{
 					customerAddresses && customerAddresses.length ?
-						customerAddresses.filter((customerAddress: CustomerSupplier) => filterCustomerAddress(searchTerm, customerAddress))
-							.map((customerAddress: CustomerSupplier, key: number) => {
+						customerAddresses.filter((customerAddress: CustomerSupplierAddress) => filterCustomerAddress(searchTerm, customerAddress))
+							.map((customerAddress: CustomerSupplierAddress, key: number) => {
 								return (
 									<div className='card-container' key={key}>
 										<div className='card-content'>
-											<p className='card-title'>{customerAddress.addressName}</p>
-											<p className='card-info'>{customerAddress.address}</p>
+											<p className='card-title'>{customerAddress.name}</p>
+											<p className='card-info'>{customerAddress.customer.address}</p>
 										</div>
 										<div className='card-actions'>
 											<button onClick={() => console.log('Editar!')} className='bt-edit'>Editar</button>

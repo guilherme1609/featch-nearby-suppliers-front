@@ -5,11 +5,10 @@ import '../styles/HomePage.css'
 import CheckAuthGuard from '../guard/CheckAuthGuard'
 import useNearbySuppliers from '../hooks/useNearbySuppliers'
 import { useEffect, useState } from 'react'
-import CustomerSupplier from '../core/CustomerSupplier'
+import CustomerSupplierAddress from '../core/CustomerSupplierAddress'
 import AuthService from '../services/AuthService'
 import { useNavigate } from 'react-router-dom'
 import AuthRepository from '../core/AuthRepository'
-import Auth from '../core/Auth'
 
 export default function HomePage() {
 
@@ -66,7 +65,7 @@ export default function HomePage() {
 				<SidePanelComponent
 					customerAddresses={customerSuppliers}
 					onSelectCustomerAddress={
-						(customerAddress: CustomerSupplier) => selectCustomerAddress(customerAddress)
+						(customerAddress: CustomerSupplierAddress) => selectCustomerAddress(customerAddress)
 					}
 					userData={userData}
 					onLogout={() => logOut()}
